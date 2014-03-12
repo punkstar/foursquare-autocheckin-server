@@ -1,4 +1,6 @@
 Foursq::Application.routes.draw do
+  get "foursquare/connect"
+  get "foursquare/callback"
   resources :devices
 
   devise_for :users
