@@ -4,4 +4,12 @@ describe Entry do
   it "has a valid factory" do
     expect(FactoryGirl.create(:entry)).to be_valid
   end
+
+  it "is invalid without an ip_address" do
+    expect(FactoryGirl.build(:entry, ip_address: nil)).not_to be_valid
+  end
+
+  it "is invalid without an device" do
+    expect(FactoryGirl.build(:entry, device_id: nil)).not_to be_valid
+  end
 end
