@@ -1,9 +1,13 @@
 Foursq::Application.routes.draw do
+  get "api/ping", :defaults => { :format => :json }
   get "foursquare/connect"
   get "foursquare/callback"
-  resources :devices
 
+  root :to => "devices#index"
+
+  resources :devices
   devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -59,5 +63,4 @@ Foursq::Application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => "devices#index"
 end
