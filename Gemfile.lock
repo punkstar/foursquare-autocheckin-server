@@ -82,7 +82,7 @@ GEM
     multi_json (1.9.0)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
-    newrelic_rpm (3.3.3)
+    newrelic_rpm (3.7.3.204)
     oauth2 (0.9.3)
       faraday (>= 0.8, < 0.10)
       jwt (~> 0.1.8)
@@ -175,7 +175,7 @@ DEPENDENCIES
   foursquare2
   jbuilder (~> 1.2)
   jquery-rails
-  newrelic_rpm
+  newrelic_rpm (~> 3.7)
   oauth2
   pg
   rails (= 4.0.3)
