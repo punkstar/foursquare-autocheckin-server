@@ -10,6 +10,14 @@ class User < ActiveRecord::Base
     Foursquare2::Client.new(:oauth_token => foursquare_token, :api_version => '20140312')
   end
 
+  def seen_today?(today=nil)
+    devices.each do |device|
+      return true if device.seen_today?(today)
+    end
+
+    return false
+  end
+
   def checkin(venue_id)
     venue = foursquare_client.venue(venue_id)
     venue_lat_lon = "%.5f,%.5f" % [venue.location.lat, venue.location.lng]

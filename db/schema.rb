@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140312231406) do
+ActiveRecord::Schema.define(version: 20140313000842) do
 
   create_table "devices", force: true do |t|
     t.string   "name"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20140312231406) do
   end
 
   add_index "devices", ["mac_address"], name: "index_devices_on_mac_address", unique: true
+
+  create_table "entries", force: true do |t|
+    t.string   "ip_address"
+    t.datetime "created_at"
+    t.integer  "device_id"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
