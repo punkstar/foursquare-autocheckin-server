@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 
     foursquare_client.add_checkin(
       :venueId => venue_id,
-      :broadcast => 'private',
+      :broadcast => 'public',
       :shout => "Automatic check-in.",
       :ll => venue_lat_lon,
       :llAcc => 1,
