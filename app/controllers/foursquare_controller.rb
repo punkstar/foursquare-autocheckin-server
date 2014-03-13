@@ -1,5 +1,6 @@
 class FoursquareController < ApplicationController
   protect_from_forgery :except => :callback
+  before_filter :authenticate_user!
 
   def initialize
     app_id = ENV['FOURSQUARE_APP_ID']
