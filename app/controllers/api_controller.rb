@@ -2,7 +2,7 @@ class ApiController < ApplicationController
   def ping
     response = {}
 
-    mac_addresses = (params[:mac_addresses] || "").split ","
+    mac_addresses = (params[:mac_addresses].upcase || "").split ","
     devices = Device.where('mac_address IN (?)', mac_addresses)
 
     total_devices_found = 0

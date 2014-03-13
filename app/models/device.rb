@@ -15,4 +15,8 @@ class Device < ActiveRecord::Base
 
     entries.where(:created_at => limit_start..limit_end).count > 0
   end
+
+  def mac_address=(address)
+    self[:mac_address] = address.upcase
+  end
 end
