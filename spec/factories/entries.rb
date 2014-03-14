@@ -2,7 +2,6 @@
 
 FactoryGirl.define do
   factory :entry do
-    ip_address "MyString"
     created_at "2014-03-13"
     device_id 1
   end
