@@ -17,6 +17,10 @@ class Device < ActiveRecord::Base
   end
 
   def mac_address=(address)
-    self[:mac_address] = address.upcase
+    if not address.nil?
+      address.upcase!
+    end
+
+    self[:mac_address] = address
   end
 end
