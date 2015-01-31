@@ -49,6 +49,8 @@ gem 'foursquare2'
 gem 'oauth2'
 gem 'newrelic_rpm', '~>3.7'
 
+gem 'rails_12factor', group: :production
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl_rails'
